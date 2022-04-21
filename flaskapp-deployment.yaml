@@ -1,8 +1,11 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
+  labels:
+    app: myflaskapp-dp
   name: myflaskapp-dp
 spec:
+  replicas: 1
   selector:
     matchLabels:
       app: myflaskapp
@@ -12,11 +15,5 @@ spec:
         app: myflaskapp
     spec:
       containers:
-      - name: myflaskapp
-        image: vidhya199/flaskapp:latest
-        resources:
-          limits:
-            memory: "200Mi"
-            cpu: "300m"
-        ports:
-        - containerPort: 5000
+      - image: myflaskapp
+        name: vidhya199/flaskapp:latest
