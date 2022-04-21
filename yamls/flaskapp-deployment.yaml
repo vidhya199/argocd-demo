@@ -15,5 +15,5 @@ spec:
         app: myflaskapp
     spec:
       containers:
-      - image: vidhya199/flaskapp:latest
+      - image: vidhya199/flaskapp:v1
         name: myflaskapp
