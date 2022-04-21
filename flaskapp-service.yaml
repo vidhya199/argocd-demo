@@ -2,12 +2,15 @@ apiVersion: v1
 kind: Service
 metadata:
   name: myflaskapp-svc
+  labels:
+    app: myflaskapp 
+  namespace: default
 spec:
   selector:
     app: myflaskapp
   ports:
   - port: 5000
+    protocol: TCP
     targetPort: 5000
-    nodePort: 32050
   type: NodePort
     
