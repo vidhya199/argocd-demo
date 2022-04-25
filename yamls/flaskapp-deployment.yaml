@@ -5,7 +5,7 @@ metadata:
     app: myflaskapp-dp
   name: myflaskapp-dp
 spec:
-  replicas: 4
+  replicas: 2
   selector:
     matchLabels:
       app: myflaskapp
@@ -15,5 +15,5 @@ spec:
         app: myflaskapp
     spec:
       containers:
-      - image: vidhya199/flaskapp:latest
+      - image: vidhya199/flaskapp:v1
         name: myflaskapp
